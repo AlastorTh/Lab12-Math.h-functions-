@@ -11,9 +11,9 @@
 int countN(double x)
 {
 
-	double eps = 0.000001; //погрешность
-	double curr = 0; //текущее значение суммы
-	double comp = x; //текущий элемент суммировани¤
+	double eps = 0.000001; 
+	double curr = 0; 
+	double comp = x; 
 	int N = 1;
 	double sin_val;
 	sin_val = sin(x);
@@ -24,11 +24,11 @@ int countN(double x)
 		return -1;
 	}
 
-	while ((fabs(curr - sin_val) > eps)) // замена вычислени¤ sin каждый раз в цикле на его вычисление перед началом
+	while ((fabs(curr - sin_val) > eps)) 
 	{
 		N++;
 		curr += comp;
-		comp = -((comp * x * x)) / ((2. * N - 1) * (2. * N - 2)); // замена на числа с плавающей точкой дл¤ избежани¤ переполнени¤
+		comp = -((comp * x * x)) / ((2. * N - 1) * (2. * N - 2)); 
 
 	}
 
@@ -40,30 +40,28 @@ int countN(double x)
 
 int main()
 {
-
+	system("color F0");
 	setlocale(LC_ALL, "Rus");
 	float x = 0;
-	printf("%s", "¬ведите число x\n");
+	printf("%s", "������� ����� x\n");
 	scanf_s("%f", &x);
 	int count_num = countN(x);
 	if (count_num == -1) 
 	{
 		return -2;
 	}
-	printf("%s%d%s", "ƒл¤ вычислени¤ значени¤ синуса понадобилось ", count_num, " элементов\n");
+	printf("%s%d%s", "��� ���������� �������� ������ ������������ ", count_num, " ���������\n");
 
 
 	printf("\n\n\n\n");
-	int k = 0;
+	
 	int M = 4;
 	float A = 3;
 	float step = 0.1;
-	int Num = A / step + 1; //количество элементов в таблице
+	int Num = A / step + 1; 
 	float i = 0;
 	int j = 0;
-	for (k = 0; k < Num / M + 1; k++) {
-		printf("%s", " x sin(x) ");
-	}
+	
 	printf("\n");
 	for (i = 0; i < A; i += 0.1) 
 	{
